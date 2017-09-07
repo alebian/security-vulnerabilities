@@ -1,0 +1,13 @@
+- if @post.first.try(:body).present?
+  h1
+    = "Title: #{@post.first.title}"
+  h3
+    = "Scaped body: #{@post.first.body}"
+  h3
+    = raw "Unscaped body: #{@post.first.body}"
+
+h1
+  | JSON representation
+
+pre.prettyprint
+  = JSON.pretty_generate(@post.as_json)

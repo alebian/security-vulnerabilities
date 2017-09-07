@@ -8,5 +8,6 @@ User.create(email: 'dinu@wolox.com.ar',    password: 'cowboy')
 User.create(email: 'eri@wolox.com.ar',     password: 'computer')
 User.create(email: 'dani@wolox.com.ar',    password: 'riverplate')
 
-Post.create!(user: gabo, title: 'giladita', body: 'gilada gilada')
-Post.create!(user: ale, title: 'adivinen que', body: 'soy re careta')
+Post.create(user: gabo, title: 'giladita', body: 'gilada gilada')
+Post.create(user: ale, title: 'adivinen que', body: 'soy re careta')
+Post.create(user: ale, title: 'XSS', body: '<script>alert("This is an XSS example");</script>')
