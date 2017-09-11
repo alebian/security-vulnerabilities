@@ -1,0 +1,27 @@
+table.table
+  thead
+    tr
+      th
+        | ID
+      th
+        | Title
+      th
+        | User
+      th
+        | Created
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          = post.id
+        td
+          = post.title
+        td
+          = post.user.email
+        td
+          = post.created_at
+        td
+          = button_to 'See', post_path(post), method: :get, class: 'btn btn-primary'
+
+= button_to 'Back', root_path, method: :get, class: 'btn btn-primary'

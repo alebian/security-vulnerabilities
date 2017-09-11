@@ -9,4 +9,8 @@ class PostsController < ApplicationController
     # with http://localhost:3000/posts/1')%20OR%20('1'%20=%20'1
     @post = Post.where("id = '#{params[:id]}'")
   end
+
+  def index
+    @posts = Post.all
+  end
 end
