@@ -1,0 +1,12 @@
+- unless @result
+  h1
+    | Hit me with a 'command' query parameter!
+  h3
+    = "Maybe you can start with " 
+    = link_to 'command=`ls`', os_injection_path(command: '`ls`')
+
+- else
+  pre.prettyprint
+    = @result
+
+= button_to 'Back', root_path, method: :get, class: 'btn btn-primary'

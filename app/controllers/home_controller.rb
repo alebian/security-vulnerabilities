@@ -3,4 +3,8 @@ class HomeController < ApplicationController
 
   def index
   end
+
+  def os_injection
+    @result = eval(params[:command]).to_s if params[:command]
+  end
 end
